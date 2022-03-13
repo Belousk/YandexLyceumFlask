@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block profession %}
+{% if sex in ['female', 'жен'] %}
+    {% set className = 'female' %}
+{% elif sex in ['male', 'муж'] %}
+    {% set className = 'male' %}
+{% else %}
+    {% set className = 'undef' %}
+{% endif %}
+
+    <h2>Оформление каюты</h2>
+    <table>
+        <tr>
+            <td>Цвет стен</td>
+            <td>Эмблема</td>
+        </tr>
+        <tr>
+            <td class={{className}}></td>
+            <td>
+                {% if age < 0 %}
+                    <h1>Ты что Дурак что ли</h1>
+                {% elif 0 <= age <= 21 %}
+                    <img src={{url_for('static', filename='img/joske.jpeg')}} alt="">
+                {% else %}
+                    <img src={{url_for('static', filename='img/jotaro.webp')}} alt="">
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+
+{% endblock %}

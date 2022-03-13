@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block profession %}
+{% if prof in ['строитель', 'инженер'] %}
+<h2>Инженерные тренажеры</h2>
+<img src={{url_for('static', filename='img/joseph_joestar.jpg' )}} alt="">
+{% else %}
+<h2>Научные тренажеры</h2>
+<img src={{url_for('static', filename='img/jojo_vs_dio.png' )}} alt="">
+{% endif %}
+{% endblock %}

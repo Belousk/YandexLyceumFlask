@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block profession %}
+<h2>{{fullname}}</h2>
+<img width='500' height="auto" src={{url_for('static', filename='/img/' + image)}} alt="">
+<p>{{description}}</p>
+{% endblock %}

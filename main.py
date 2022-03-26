@@ -90,7 +90,7 @@ def galery():
     if request.method == 'GET':
         imgs = os.listdir(DIRNAME)
         print(imgs)
-        return render_template('galery.html', images=imgs)
+        return render_template('gallery.html', images=imgs)
     elif request.method == 'POST':
         f = request.files['file']
         with open('static/img/carousel_img/' + f.filename, 'wb') as ass:
